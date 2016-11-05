@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace CommonServiceRegistry
 {
@@ -60,6 +59,16 @@ namespace CommonServiceRegistry
         void RegisterSingleton<TFrom, TTo>(Func<TFrom> factory = null) where TTo : class, TFrom where TFrom : class;
 
         /// <summary>
+        /// Registers the type <typeparamref name="TFrom"/> to be implemented
+        /// by type <typeparamref name="TTo"/> with an optional <paramref name="factory"/>.
+        /// Scoped: A new instance is created per scrope. See resolving. BeginScope().
+        /// </summary>
+        /// <typeparam name="TFrom">The type of from.</typeparam>
+        /// <typeparam name="TTo">The type of to.</typeparam>
+        /// <param name="factory">The factory.</param>
+        void RegisterScoped<TFrom, TTo>(Func<TFrom> factory = null) where TTo : class, TFrom where TFrom : class;
+
+        /// <summary>
         /// Registers the type <typeparamref name="TFrom" /> to be implemented
         /// with a pre-instantiated <paramref name="instance" />.
         /// Instance: The given <paramref name="instance" /> will be used. No new instance is created.
@@ -73,8 +82,5 @@ namespace CommonServiceRegistry
         /// Some containers refer this as "external".
         /// </remarks>
         void RegisterInstance<TFrom, TTo>(TTo instance, bool isExternalControlled = false) where TTo : class, TFrom where TFrom : class;
-
-        void RegisterCollection<TFrom>(IEnumerable<TFrom> containerControlledCollection);
-        void RegisterCollection<TFrom>(params TFrom[] singletons);
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace CommonServiceRegistry
 {
@@ -6,5 +7,6 @@ namespace CommonServiceRegistry
     {
         T Resolve<T>() where T: class;
         IEnumerable<T> ResolveAll<T>() where T : class;
+        IDisposable BeginScope();
     }
 }

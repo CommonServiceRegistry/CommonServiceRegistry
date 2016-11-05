@@ -30,7 +30,7 @@ namespace CommonServiceRegistry.Tests
         }
 
         [Test(Description = "Tests that transient registrations return a new instance every time solved.")]
-        public void Test_Transient_One()
+        public void Test_Transient()
         {
             // Arrange
             Registry.RegisterTransient<IMyClass, MyClass>();
@@ -47,27 +47,8 @@ namespace CommonServiceRegistry.Tests
             obj1.InstanceId.Should().NotBe(obj2.InstanceId);
         }
 
-        [Test(Description = "Tests that transient registrations return a new instance every time solved.")]
-        public void Test_Transient_Many()
-        {
-            // Arrange
-            Registry.RegisterTransient<IBaseClass, MyClass>(null);
-            Registry.RegisterTransient<IBaseClass, MyOtherClass>(null);
-
-            // Act
-            var objs1 = Resolver.ResolveAll<IBaseClass>();
-            var objs2 = Resolver.ResolveAll<IBaseClass>();
-
-            // Assert
-            objs1.Should().HaveCount(2);
-            objs2.Should().HaveCount(2);
-
-            var ids = objs1.Select(o => o.InstanceId).Union(objs2.Select(o => o.InstanceId)).Distinct();
-            ids.Should().HaveCount(4);
-        }
-
         [Test(Description = "Tests that singelton registrations return a the same instance every time solved.")]
-        public void Test_Singelton_One()
+        public void Test_Singelton()
         {
             // Arrange
             Registry.RegisterSingleton<IMyClass, MyClass>();
@@ -84,23 +65,42 @@ namespace CommonServiceRegistry.Tests
             obj1.InstanceId.Should().Be(obj2.InstanceId);
         }
 
-        [Test(Description = "Tests that singelton registrations return a the same instance every time solved.")]
-        public void Test_Singelton_Many()
+        [Test(Description = "Tests that scoped registrations return a the same instance per scope.")]
+        public void Test_Scoped()
         {
             // Arrange
-            Registry.RegisterSingleton<IBaseClass, MyClass>(null);
-            Registry.RegisterSingleton<IBaseClass, MyOtherClass>(null);
+            Registry.RegisterScoped<IMyClass, MyClass>();
 
-            // Act
-            var objs1 = Resolver.ResolveAll<IBaseClass>();
-            var objs2 = Resolver.ResolveAll<IBaseClass>();
+            IMyClass obj1, obj2, obj3, obj4;
+
+            // Act (Getting two times to object)
+            using (Resolver.BeginScope())
+            {
+                obj1 = Resolver.Resolve<IMyClass>();
+                obj2 = Resolver.Resolve<IMyClass>();
+
+            }
+
+            using (Resolver.BeginScope())
+            {
+                obj3 = Resolver.Resolve<IMyClass>();
+                obj4 = Resolver.Resolve<IMyClass>();
+            }
 
             // Assert
-            objs1.Should().HaveCount(2);
-            objs2.Should().HaveCount(2);
+            obj1.Should().NotBeNull();
+            obj2.Should().NotBeNull();
+            obj1.InstanceId.Should().NotBeEmpty();
+            obj2.InstanceId.Should().NotBeEmpty();
+            obj1.InstanceId.Should().Be(obj2.InstanceId);
 
-            var ids = objs1.Select(o => o.InstanceId).Union(objs2.Select(o => o.InstanceId)).Distinct();
-            ids.Should().HaveCount(2);
+            obj3.Should().NotBeNull();
+            obj4.Should().NotBeNull();
+            obj3.InstanceId.Should().NotBeEmpty();
+            obj4.InstanceId.Should().NotBeEmpty();
+            obj3.InstanceId.Should().Be(obj3.InstanceId);
+
+            obj1.InstanceId.Should().NotBe(obj3.InstanceId);
         }
 
         /// <summary>

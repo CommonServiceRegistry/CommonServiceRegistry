@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SimpleInjector;
 
 namespace CommonServiceRegistry.SimpleInjector
@@ -26,14 +23,19 @@ namespace CommonServiceRegistry.SimpleInjector
             container.RegisterSingleton<TFrom>(instance);
         }
 
-        public void RegisterCollection<TFrom>(IEnumerable<TFrom> containerControlledCollection)
+        /// <inheritdoc />
+        public void RegisterScoped<TFrom, TTo>(Func<TFrom> factory = null) where TFrom : class where TTo : class, TFrom
         {
-            throw new NotImplementedException();
-        }
+            CheckContainer();
 
-        public void RegisterCollection<TFrom>(params TFrom[] singletons)
-        {
-            throw new NotImplementedException();
+            if (factory == null)
+            {
+                container.Register<TFrom, TTo>(Lifestyle.Scoped);
+            }
+            else
+            {
+                container.Register(factory, Lifestyle.Scoped);
+            }
         }
 
         /// <inheritdoc />
@@ -56,13 +58,13 @@ namespace CommonServiceRegistry.SimpleInjector
         {
             CheckContainer();
 
-            if (string.IsNullOrEmpty(name))
+            if (factory == null)
             {
                 container.Register<TFrom, TTo>();
             }
             else
             {
-                container.RegisterCollection<TFrom>();
+                container.Register(factory);
             }
         }
 
@@ -80,6 +82,15 @@ namespace CommonServiceRegistry.SimpleInjector
             CheckContainer();
 
             return container.GetAllInstances<T>();
+        }
+
+        public IDisposable BeginScope()
+        {
+            CheckContainer();
+
+            container.BeginLifetimeScope();
+
+            return
         }
 
         private void CheckContainer()
