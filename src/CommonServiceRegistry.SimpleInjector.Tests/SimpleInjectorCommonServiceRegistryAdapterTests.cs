@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SimpleInjector;
+﻿using SimpleInjector;
 using CommonServiceRegistry.Tests;
 using NUnit.Framework;
+using SimpleInjector.Extensions.LifetimeScoping;
 
 namespace CommonServiceRegistry.SimpleInjector.Tests
 {
@@ -20,6 +16,7 @@ namespace CommonServiceRegistry.SimpleInjector.Tests
         protected override void InitializeContainerAndCommonServiceRegistry()
         {
             Container = new Container();
+            Container.Options.DefaultScopedLifestyle = new LifetimeScopeLifestyle();
 
             var simpleInjectorCommonServiceRegistryAdapter = new SimpleInjectorCommonServiceRegistryAdapter(Container);
 

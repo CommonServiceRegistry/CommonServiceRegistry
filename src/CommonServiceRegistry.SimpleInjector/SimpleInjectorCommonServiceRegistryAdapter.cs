@@ -88,9 +88,7 @@ namespace CommonServiceRegistry.SimpleInjector
         {
             CheckContainer();
 
-            container.BeginLifetimeScope();
-
-            return
+            return container.BeginLifetimeScope();
         }
 
         private void CheckContainer()

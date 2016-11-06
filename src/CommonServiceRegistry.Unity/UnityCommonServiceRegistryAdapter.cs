@@ -56,6 +56,19 @@ namespace CommonServiceRegistry.Unity
             }
         }
 
+        /// <summary>
+        /// Registers the type <typeparamref name="TFrom"/> to be implemented
+        /// by type <typeparamref name="TTo"/> with an optional <paramref name="factory"/>.
+        /// Scoped: A new instance is created per scrope. See resolving. BeginScope().
+        /// </summary>
+        /// <typeparam name="TFrom">The type of from.</typeparam>
+        /// <typeparam name="TTo">The type of to.</typeparam>
+        /// <param name="factory">The factory.</param>
+        public void RegisterScoped<TFrom, TTo>(Func<TFrom> factory = null) where TFrom : class where TTo : class, TFrom
+        {
+            throw new NotImplementedException();
+        }
+
         /// <inheritdoc />
         public void RegisterInstance<TFrom, TTo>(TTo instance, bool isExternalControlled = false) where TTo : class, TFrom where TFrom : class
         {
@@ -66,16 +79,6 @@ namespace CommonServiceRegistry.Unity
                 : new ContainerControlledLifetimeManager();
 
             container.RegisterInstance<TFrom>(instance, lifetimeManager);
-        }
-
-        public void RegisterCollection<TFrom>(IEnumerable<TFrom> containerControlledCollection)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void RegisterCollection<TFrom>(params TFrom[] singletons)
-        {
-            throw new NotImplementedException();
         }
 
         /// <inheritdoc />
@@ -92,6 +95,11 @@ namespace CommonServiceRegistry.Unity
             CheckContainer();
 
             return container.ResolveAll<T>();
+        }
+
+        public IDisposable BeginScope()
+        {
+            throw new NotImplementedException();
         }
 
         private void CheckContainer()
