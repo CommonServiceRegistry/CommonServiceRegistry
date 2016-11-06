@@ -29,9 +29,8 @@ to get the entire testsuite for a new adapter implementation.
 
 ## Current Work in Progress
 
-The current registration interface can be found [here ...](https://github.com/mduu/CommonServiceRegistry/blob/master/src/CommonServiceRegistry/ICommonServiceRegistry.cs)
-
-The current resolving interface (more an added value) can be found [here ...](https://github.com/mduu/CommonServiceRegistry/blob/master/src/CommonServiceRegistry/ICommonServiceResolver.cs)
+* The current registration interface can be found [here ...](https://github.com/mduu/CommonServiceRegistry/blob/master/src/CommonServiceRegistry/ICommonServiceRegistry.cs)
+* The current resolving interface (more an added value) can be found [here ...](https://github.com/mduu/CommonServiceRegistry/blob/master/src/CommonServiceRegistry/ICommonServiceResolver.cs)
 
 ## How to use
 
