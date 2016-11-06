@@ -1,5 +1,5 @@
 # CommonServiceRegistry
-Common Service Registry Package for C#
+Master: ![CI Build Status for master Branch](https://marcduerst.visualstudio.com/_apis/public/build/definitions/7c6411c0-584f-43dd-bb94-134baed219a2/4/badge)
 
 ## What is the Common Service Registry
 
