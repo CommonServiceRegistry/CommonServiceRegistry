@@ -11,6 +11,12 @@ namespace CommonServiceRegistry.Unity.Tests
     [TestFixture]
     public class UnityCommonServiceRegistryAdapterTests : AdapterTestsBase<IUnityContainer>
     {
+        [Test]
+        [Ignore("Not yet supported by the Unity adapter")]
+        public override void Test_Scoped()
+        {
+        }
+
         /// <summary>
         /// Creates a new IoC and return the matching <see cref="ICommonServiceRegistry"/>
         /// for it.

@@ -30,7 +30,7 @@ namespace CommonServiceRegistry.Tests
         }
 
         [Test(Description = "Tests that transient registrations return a new instance every time solved.")]
-        public void Test_Transient()
+        public virtual void Test_Transient()
         {
             // Arrange
             Registry.RegisterTransient<IMyClass, MyClass>();
@@ -48,7 +48,7 @@ namespace CommonServiceRegistry.Tests
         }
 
         [Test(Description = "Tests that singelton registrations return a the same instance every time solved.")]
-        public void Test_Singelton()
+        public virtual void Test_Singelton()
         {
             // Arrange
             Registry.RegisterSingleton<IMyClass, MyClass>();
@@ -66,7 +66,7 @@ namespace CommonServiceRegistry.Tests
         }
 
         [Test(Description = "Tests that scoped registrations return a the same instance per scope.")]
-        public void Test_Scoped()
+        public virtual void Test_Scoped()
         {
             // Arrange
             Registry.RegisterScoped<IMyClass, MyClass>();
