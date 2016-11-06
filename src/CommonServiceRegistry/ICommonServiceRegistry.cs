@@ -3,7 +3,7 @@
 namespace CommonServiceRegistry
 {
     /// <summary>
-    /// Code are service registrations against this interface eg. by using extension
+    /// Code your service registrations against this interface eg. by using extension
     /// methods for <see cref="ICommonServiceRegistry"/>. Then load your prefered IoC
     /// and the ICommonServiceRegistry implementation for it. Instantiate the container
     /// and the <see cref="ICommonServiceRegistry"/> based on the IoC (see implementation
