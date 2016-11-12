@@ -6,10 +6,10 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("CommonServiceRegistry.Unity")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Adapter for SimpleInjector for CommonServiceRegistry")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("CommonServiceRegistry.Unity")]
+[assembly: AssemblyCompany("Marc Dürst")]
+[assembly: AssemblyProduct("CommonServiceRegistry")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

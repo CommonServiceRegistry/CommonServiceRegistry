@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("CommonServiceRegistry")]
 [assembly: AssemblyDescription("IoC independant interface for service registrations")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Marc Dürst")]
 [assembly: AssemblyProduct("CommonServiceRegistry")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
