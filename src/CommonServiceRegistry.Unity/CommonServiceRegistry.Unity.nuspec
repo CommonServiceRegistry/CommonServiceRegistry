@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>$id$</id>
+    <id>MarcDuerst.CommonServiceRegistry.Unity</id>
     <version>$version$</version>
     <title>Common Service Registry Unity Adapter</title>
     <authors>Marc Dürst</authors>
     <owners>Marc Dürst</owners>
     <projectUrl>https://github.com/mduu/CommonServiceRegistry</projectUrl>
-    <iconUrl>https://github.com/mduu/CommonServiceRegistry/blob/release/current/LICENSE</iconUrl>
+    <licenseUrl>https://github.com/mduu/CommonServiceRegistry/blob/release/current/LICENSE</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>Unity adapter for Common Service Registry.</description>
     <releaseNotes>Preview of the Unity Adapter. Does not yet support Scoped lifetime.</releaseNotes>
