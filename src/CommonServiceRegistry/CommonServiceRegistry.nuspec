@@ -3,9 +3,9 @@
   <metadata>
     <id>MarcDuerst.CommonServiceRegistry.Core</id>
     <version>$version$</version>
-    <title>$title$</title>
-    <authors>$author$</authors>
-    <owners>$author$</owners>
+    <title>Common Service Registry Core</title>
+    <authors>Marc Dürst</authors>
+    <owners>Marc Dürst</owners>
     <projectUrl>https://github.com/mduu/CommonServiceRegistry</projectUrl>
     <iconUrl>https://github.com/mduu/CommonServiceRegistry/blob/release/current/LICENSE</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
