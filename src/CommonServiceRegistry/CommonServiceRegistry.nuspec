@@ -7,7 +7,7 @@
     <authors>Marc Dürst</authors>
     <owners>Marc Dürst</owners>
     <projectUrl>https://github.com/mduu/CommonServiceRegistry</projectUrl>
-    <iconUrl>https://github.com/mduu/CommonServiceRegistry/blob/release/current/LICENSE</iconUrl>
+    <licenceurl>https://github.com/mduu/CommonServiceRegistry/blob/release/current/LICENSE</licenceurl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>The common service registry allows a library to specify IoC registrations independant from the used IoC.</description>
     <releaseNotes>This is a preview. Not yet supported are register collections.</releaseNotes>

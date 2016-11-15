@@ -7,7 +7,7 @@
     <authors>Marc Dürst</authors>
     <owners>Marc Dürst</owners>
     <projectUrl>https://github.com/mduu/CommonServiceRegistry</projectUrl>
-    <iconUrl>https://github.com/mduu/CommonServiceRegistry/blob/release/current/LICENSE</iconUrl>
+    <licenceurl>https://github.com/mduu/CommonServiceRegistry/blob/release/current/LICENSE</licenceurl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>SimpleInjector adapter for Common Service Registry.</description>
     <releaseNotes>Preview of SimpleInjector adapter for the Common Service Registry.</releaseNotes>
