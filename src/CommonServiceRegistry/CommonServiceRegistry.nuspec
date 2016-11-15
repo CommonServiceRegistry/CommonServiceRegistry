@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>MarcDuerst.CommonServiceRegistry.Core</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <projectUrl>https://github.com/mduu/CommonServiceRegistry</projectUrl>
+    <iconUrl>https://github.com/mduu/CommonServiceRegistry/blob/release/current/LICENSE</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>The common service registry allows a library to specify IoC registrations independant from the used IoC.</description>
+    <releaseNotes>This is a preview. Not yet supported are register collections.</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>common service registry ioc di dependencyinjecton inversion of control</tags>
+  </metadata>
+</package>

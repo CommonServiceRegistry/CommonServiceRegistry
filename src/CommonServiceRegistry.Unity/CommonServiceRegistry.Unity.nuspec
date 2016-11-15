@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <projectUrl>https://github.com/mduu/CommonServiceRegistry</projectUrl>
+    <iconUrl>https://github.com/mduu/CommonServiceRegistry/blob/release/current/LICENSE</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Unity adapter for Common Service Registry.</description>
+    <releaseNotes>Preview of the Unity Adapter. Does not yet support Scoped lifetime.</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>common service registry unity</tags>
+  </metadata>
+</package>
