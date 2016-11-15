@@ -7,8 +7,8 @@
     <authors>$author$</authors>
     <owners>$author$</owners>
     <projectUrl>https://github.com/mduu/CommonServiceRegistry</projectUrl>
-    <!-- <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl> -->
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://github.com/mduu/CommonServiceRegistry/blob/release/current/LICENSE</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>The common service registry allows a library to specify IoC registrations independant from the used IoC.</description>
     <releaseNotes>This is a preview. Not yet supported are register collections.</releaseNotes>
     <copyright>Copyright 2016</copyright>
