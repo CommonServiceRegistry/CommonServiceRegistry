@@ -27,10 +27,24 @@ to get the entire testsuite for a new adapter implementation.
 - Add support for collection registration / resolving
 - Add more IoC/DI containers
 
+See [here](https://github.com/mduu/CommonServiceRegistry/issues).
+
 ## Current Work in Progress
 
 * The current registration interface can be found [here ...](https://github.com/mduu/CommonServiceRegistry/blob/master/src/CommonServiceRegistry/ICommonServiceRegistry.cs)
 * The current resolving interface (more an added value) can be found [here ...](https://github.com/mduu/CommonServiceRegistry/blob/master/src/CommonServiceRegistry/ICommonServiceResolver.cs)
+
+## How to install
+
+Easiest is to get them from Nuget.org:
+
+- Core: https://www.nuget.org/packages/MarcDuerst.CommonServiceRegistry.Core/
+- SimpleInjector Adapter: https://www.nuget.org/packages/MarcDuerst.CommonServiceRegistry.SimpleInjector/
+- Unity Adapter: https://www.nuget.org/packages/MarcDuerst.CommonServiceRegistry.Unity/
+
+**Note:** The Nuget packages are "prerelease" state and therefore need to -pre switch (or checkbox set in case of the Nuget UI).
+
+Another option is clone the repo und build it yourself.
 
 ## How to use
 
