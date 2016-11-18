@@ -21,7 +21,7 @@ namespace CommonServiceRegistry.Unity
 
             // Register ICommonServiceResolver to point to this instance. Label it as externally
             // controlled so it does not get killed by the container.
-            RegisterInstance<ICommonServiceResolver, UnityCommonServiceRegistryAdapter>(this, true);
+            RegisterInstance<ICommonServiceResolver>(this, true);
         }
 
         /// <inheritdoc />
@@ -70,7 +70,7 @@ namespace CommonServiceRegistry.Unity
         }
 
         /// <inheritdoc />
-        public void RegisterInstance<TFrom, TTo>(TTo instance, bool isExternalControlled = false) where TTo : class, TFrom where TFrom : class
+        public void RegisterInstance<TFrom>(TFrom instance, bool isExternalControlled = false) where TFrom : class
         {
             CheckContainer();
 
@@ -78,7 +78,7 @@ namespace CommonServiceRegistry.Unity
                 ? (LifetimeManager)new ExternallyControlledLifetimeManager()
                 : new ContainerControlledLifetimeManager();
 
-            container.RegisterInstance<TFrom>(instance, lifetimeManager);
+            container.RegisterInstance(instance, lifetimeManager);
         }
 
         /// <inheritdoc />

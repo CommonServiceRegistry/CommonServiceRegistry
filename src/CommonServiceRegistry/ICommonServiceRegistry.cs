@@ -81,6 +81,6 @@ namespace CommonServiceRegistry
         /// <remarks>
         /// Some containers refer this as "external".
         /// </remarks>
-        void RegisterInstance<TFrom, TTo>(TTo instance, bool isExternalControlled = false) where TTo : class, TFrom where TFrom : class;
+        void RegisterInstance<TFrom>(TFrom instance, bool isExternalControlled = false) where TFrom: class;
     }
 }

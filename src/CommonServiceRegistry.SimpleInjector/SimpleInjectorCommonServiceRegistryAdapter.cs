@@ -16,11 +16,11 @@ namespace CommonServiceRegistry.SimpleInjector
         }
 
         /// <inheritdoc />
-        public void RegisterInstance<TFrom, TTo>(TTo instance, bool isExternalControlled = false) where TTo : class, TFrom where TFrom : class
+        public void RegisterInstance<TFrom>(TFrom instance, bool isExternalControlled = false) where TFrom : class
         {
             CheckContainer();
 
-            container.RegisterSingleton<TFrom>(instance);
+            container.RegisterSingleton(instance);
         }
 
         /// <inheritdoc />
