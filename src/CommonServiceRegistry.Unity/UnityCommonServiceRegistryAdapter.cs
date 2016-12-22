@@ -4,6 +4,13 @@ using Microsoft.Practices.Unity;
 
 namespace CommonServiceRegistry.Unity
 {
+    /// <summary>
+    /// Implements <see cref="ICommonServiceRegistry"/> and <see cref="ICommonServiceResolver"/>
+    /// using the Unity IoC.
+    /// </summary>
+    /// <seealso cref="CommonServiceRegistry.ICommonServiceRegistry" />
+    /// <seealso cref="CommonServiceRegistry.ICommonServiceResolver" />
+    /// <seealso cref="UnityContainer"/>
     public class UnityCommonServiceRegistryAdapter : ICommonServiceRegistry, ICommonServiceResolver
     {
         private readonly IUnityContainer container;
@@ -97,6 +104,7 @@ namespace CommonServiceRegistry.Unity
             return container.ResolveAll<T>();
         }
 
+        /// <inheritdoc />
         public IDisposable BeginScope()
         {
             throw new NotImplementedException();

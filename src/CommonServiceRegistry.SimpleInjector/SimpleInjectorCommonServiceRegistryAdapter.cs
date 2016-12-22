@@ -4,10 +4,21 @@ using SimpleInjector;
 
 namespace CommonServiceRegistry.SimpleInjector
 {
+    /// <summary>
+    /// Implements <see cref="ICommonServiceRegistry"/> and <see cref="ICommonServiceResolver"/>
+    /// using the Simple Injector IoC.
+    /// </summary>
+    /// <seealso cref="CommonServiceRegistry.ICommonServiceRegistry" />
+    /// <seealso cref="CommonServiceRegistry.ICommonServiceResolver" />
     public class SimpleInjectorCommonServiceRegistryAdapter : ICommonServiceRegistry, ICommonServiceResolver
     {
         private readonly Container container;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SimpleInjectorCommonServiceRegistryAdapter"/> class.
+        /// </summary>
+        /// <param name="container">The container.</param>
+        /// <exception cref="System.ArgumentNullException">container</exception>
         public SimpleInjectorCommonServiceRegistryAdapter(Container container)
         {
             if (container == null) { throw new ArgumentNullException(nameof(container)); }
@@ -84,6 +95,7 @@ namespace CommonServiceRegistry.SimpleInjector
             return container.GetAllInstances<T>();
         }
 
+        /// <inheritdoc />
         public IDisposable BeginScope()
         {
             CheckContainer();

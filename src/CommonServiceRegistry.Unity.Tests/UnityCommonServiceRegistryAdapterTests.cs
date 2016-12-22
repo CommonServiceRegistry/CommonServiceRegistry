@@ -5,9 +5,10 @@ using NUnit.Framework;
 namespace CommonServiceRegistry.Unity.Tests
 {
     /// <summary>
-    /// Tests for the <see cref="UnityCommonServiceRegistryAdapter"/>.
+    /// Tests for the <see cref="UnityCommonServiceRegistryAdapter"/> based on <see cref="AdapterTestsBase{TContainer}"/>.
     /// </summary>
-    /// <seealso cref="CommonServiceRegistry.Tests.AdapterTestsBase{Microsoft.Practices.Unity.IUnityContainer}" />
+    /// <seealso cref="CommonServiceRegistry.Tests.AdapterTestsBase{IUnityContainer}" />
+    /// <seealso cref="UnityCommonServiceRegistryAdapter"/>
     [TestFixture]
     public class UnityCommonServiceRegistryAdapterTests : AdapterTestsBase<IUnityContainer>
     {

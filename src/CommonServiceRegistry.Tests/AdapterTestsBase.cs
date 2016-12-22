@@ -8,21 +8,29 @@ namespace CommonServiceRegistry.Tests
 {
     /// <summary>
     /// Base class for testing IoC adapters. Adapter implementations just need
-    /// to inherit from this base class, implement <see cref="CreateCommonServiceRegistry"/>
+    /// to inherit from this base class, implement <see cref="InitializeContainerAndCommonServiceRegistry"/>
     /// and get all the tests.
     /// </summary>
     public abstract class AdapterTestsBase<TContainer>
         where TContainer : class
     {
+        /// <summary>
+        /// Sets up the tests by calling the inheritors <see cref="InitializeContainerAndCommonServiceRegistry"/>
+        /// and then ensure the container and the registry are set up.
+        /// </summary>
         [SetUp]
         public void SetUp()
         {
             InitializeContainerAndCommonServiceRegistry();
 
-            Container.Should().NotBeNull("Container not initialized properly within InitializeContainerAndCommonServiceRegistry()!");
-            Registry.Should().NotBeNull("CommonServiceRegistry 'registry' not initialized properly within InitializeContainerAndCommonServiceRegistry()!");
+            Container.Should().NotBeNull("CommonServiceRegistry 'Container' not initialized properly within InitializeContainerAndCommonServiceRegistry()!");
+            Registry.Should().NotBeNull("CommonServiceRegistry 'Registry' not initialized properly within InitializeContainerAndCommonServiceRegistry()!");
+            Resolver.Should().NotBeNull("CommonServiceRegistry 'Resolver' not initialized properly within InitializeContainerAndCommonServiceRegistry()!");
         }
 
+        /// <summary>
+        /// Tears down the tests.
+        /// </summary>
         [TearDown]
         public void TearDown()
         {
@@ -110,11 +118,13 @@ namespace CommonServiceRegistry.Tests
         /// <returns></returns>
         protected abstract void InitializeContainerAndCommonServiceRegistry();
 
+        /// <summary>
+        /// Cleans up after a test.
+        /// </summary>
         protected virtual void CleanUpTest()
         {
             Registry = null;
-            var disposableContainer = Container as IDisposable;
-            disposableContainer?.Dispose();
+            (Container as IDisposable)?.Dispose();
         }
 
         protected TContainer Container;
