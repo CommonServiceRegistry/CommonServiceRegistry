@@ -38,9 +38,9 @@ See [here](https://github.com/mduu/CommonServiceRegistry/issues).
 
 Easiest is to get them from Nuget.org:
 
-- Core: https://www.nuget.org/packages/MarcDuerst.CommonServiceRegistry.Core/
-- SimpleInjector Adapter: https://www.nuget.org/packages/MarcDuerst.CommonServiceRegistry.SimpleInjector/
-- Unity Adapter: https://www.nuget.org/packages/MarcDuerst.CommonServiceRegistry.Unity/
+- Core: https://www.nuget.org/packages/CommonServiceRegistry.Core/
+- SimpleInjector Adapter: https://www.nuget.org/packages/CommonServiceRegistry.SimpleInjector/
+- Unity Adapter: https://www.nuget.org/packages/CommonServiceRegistry.Unity/
 
 **Note:** The Nuget packages are "prerelease" state and therefore need to -pre switch (or checkbox set in case of the Nuget UI).
 
