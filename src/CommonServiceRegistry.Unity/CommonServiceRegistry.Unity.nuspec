@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>MarcDuerst.CommonServiceRegistry.Unity</id>
+    <id>CommonServiceRegistry.Unity</id>
     <version>$version$</version>
     <title>Common Service Registry Unity Adapter</title>
     <authors>Marc Dürst</authors>

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>MarcDuerst.CommonServiceRegistry.Core</id>
+    <id>CommonServiceRegistry.Core</id>
     <version>$version$</version>
     <title>Common Service Registry Core</title>
     <authors>Marc Dürst</authors>

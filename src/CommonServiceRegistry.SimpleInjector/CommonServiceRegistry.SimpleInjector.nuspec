@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>MarcDuerst.CommonServiceRegistry.SimpleInjector</id>
+    <id>CommonServiceRegistry.SimpleInjector</id>
     <version>$version$</version>
     <title>Common Service Registry SimpleInjector Adapter</title>
     <authors>Marc Dürst</authors>
