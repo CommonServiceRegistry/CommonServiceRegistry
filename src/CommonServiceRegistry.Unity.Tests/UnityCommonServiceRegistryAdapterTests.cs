@@ -13,7 +13,7 @@ namespace CommonServiceRegistry.Unity.Tests
     public class UnityCommonServiceRegistryAdapterTests : AdapterTestsBase<IUnityContainer>
     {
         [Test]
-        [Ignore("Not yet supported by the Unity adapter")]
+        [Ignore("Not yet supported by the Unity adapter. See: https://github.com/mduu/CommonServiceRegistry/issues/1")]
         public override void Test_Scoped()
         {
         }
