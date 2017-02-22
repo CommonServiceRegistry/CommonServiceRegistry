@@ -24,6 +24,10 @@ namespace CommonServiceRegistry.SimpleInjector
             if (container == null) { throw new ArgumentNullException(nameof(container)); }
 
             this.container = container;
+
+            // Register ICommonServiceResolver to point to this instance. Label it as externally
+            // controlled so it does not get killed by the container.
+            RegisterInstance<ICommonServiceResolver>(this, true);
         }
 
         /// <inheritdoc />
