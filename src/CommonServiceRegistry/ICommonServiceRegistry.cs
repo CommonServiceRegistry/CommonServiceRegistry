@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CommonServiceRegistry
 {
@@ -82,5 +83,28 @@ namespace CommonServiceRegistry
         /// Some containers refer this as "external".
         /// </remarks>
         void RegisterInstance<TFrom>(TFrom instance, bool isExternalControlled = false) where TFrom: class;
+
+        /// <summary>
+        /// Register a collection by using singleton instances.
+        /// </summary>
+        /// <remarks>The singletons need to be thread-safe.</remarks>
+        /// <typeparam name="TFrom">The type of from.</typeparam>
+        /// <param name="singletons">The singleton instances to return when <typeparamref name="TFrom"/> is requested.</param>
+        void RegisterCollection<TFrom>(params TFrom[] singletons) where TFrom : class;
+
+        /// <summary>
+        /// Register a collection by using an enumerable of types. Thouse types will be
+        /// instanciated using their configured lifetime.
+        /// </summary>
+        /// <typeparam name="TFrom">The target type that gets requested.</typeparam>
+        /// <param name="toTypes">The types to resolve when the <typeparamref name="TFrom"/> gets requested.</param>
+        void RegisterCollection<TFrom>(IEnumerable<Type> toTypes) where TFrom : class;
+
+        /// <summary>
+        /// Register a collection using non-generic types.
+        /// </summary>
+        /// <param name="fromType">The type that gets requested.</param>
+        /// <param name="toTypes">The types to return instances when <paramref name="fromType"/> get requested.</param>
+         void RegisterCollection(Type fromType, IEnumerable<Type> toTypes);
     }
 }
